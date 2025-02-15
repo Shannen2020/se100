@@ -6,15 +6,23 @@ p {
 	color:rgb(10,54,99);
 } */
 
+* {
+	margin: 0;
+	padding-left: 10;
+}
+
 .welcome-section {
 	color:red;
-
 }
 
 .about-us {
 	color:green;
 }
 
+.singapore p{
+	font-size: 32;
+
+}
 #career {
 	color:orange;
 }
