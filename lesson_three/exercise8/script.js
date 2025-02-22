@@ -25,6 +25,10 @@ console.log(closeBar)
 console.log(high)
 console.log(low)
 
+// Quick way
+const result = Object.values(AAPLPrevBar)
+console.log(result)
+
 
 // OTHER NOTES ON OBJECT
 const student = {
