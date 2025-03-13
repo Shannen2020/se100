@@ -43,12 +43,14 @@ Promise.race(promises).then((value)=> console.log(value))
 
 Bonus Question:
 // Your code here
-const p2 = () => new Promise((resolve,reject)=>
-    setTimeout(()=> {
-        resolve("Hello");
-        }, 1000))
+const HelloWorldPromise = new Promise ((resolve,reject)=> {
+  setTimeout(() => {
+    resolve("World")
+  }, 1000);
+})
 
-p2()
-.then((result)=>
-    console.log(result))
-.then()
+HelloWorldPromise
+.then((message)=> {
+  return message
+})
+.then((new_message => console.log("Hello " + new_message)))
