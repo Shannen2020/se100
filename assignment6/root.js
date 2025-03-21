@@ -1,23 +1,59 @@
 // root.js
 
-function PublicBlogPost() {
+function PublicBlogPost(props) {
+  return (<div>
+    <h1>{props.title}</h1>
+    <p>By {props.author} on {props.date}</p>
+    <p>{props.content}</p>
+  </div>)
 
 }
 
-function PrivateBlogPost() {
+function PrivateBlogPost(props) {
+  return (<div>
+    <h1>{props.title}</h1>
+    <p>By {props.author} on {props.date}</p>
+    <p>The content of this post is private</p>
+  </div>)
 
 }
 
-function BlogList() {
-
+function BlogList(props) {
+  return (
+    <div>
+      {props.blogPosts.map((blog, index)=> {
+        if (blog.isPrivate===true) {
+          return (
+            <PrivateBlogPost 
+            key={index}
+            title={blog.title} 
+            author={blog.author} 
+            date={blog.date} />
+          )
+        }
+        return (
+          <PublicBlogPost 
+          key={index}
+          title={blog.title} 
+          author={blog.author} 
+          date={blog.date} 
+          content={blog.content} />
+        )
+      })}
+    </div>
+  )
 }
 
 function Header() {
+  return (<div>
+    <h1>My Blog</h1>
+    <p>A blog about everything</p>
+  </div>) 
 
 }
 
 function Footer() {
-
+  return (<p>2024. My Blog.All rights reserved.</p>) 
 };
 
 function App() {
@@ -58,6 +94,12 @@ function App() {
       isPrivate: false
     }
   ];
+
+  return (<div>
+    <Header />
+    <BlogList blogPosts={blogPosts} />
+    <Footer />
+  </div>)
 
 };
 
