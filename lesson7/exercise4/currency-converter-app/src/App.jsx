@@ -64,15 +64,20 @@
 import './App.css'
 import { useEffect } from "react";
 
-function App() {
-  useEffect(() => {
-    fetch('https://api.example.com/data')
-      .then(response => response.json())
-      .then(data => console.log(data));
-  }, []); // Empty dependency array means this effect runs only once after the initial render
+// function App() {
+//   useEffect(() => {
+//     fetch('https://api.example.com/data')
+//       .then(response => response.json())
+//       .then(data => console.log(data));
+//   }, []); // Empty dependency array means this effect runs only once after the initial render
 
-  return <div>Check the console for data!</div>;
+//   return <div>Check the console for data!</div>;
+// }
+
+function App(props) {
+  useEffect(() => {
+    console.log("Making an API request..")
+  }, []);
 }
-  
 
 export default App;
